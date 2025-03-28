@@ -1,6 +1,6 @@
-
 import React from 'react';
 import { CheckIcon, CrossIcon } from './FeatureIcons';
+import { cn } from '@/lib/utils';
 
 // Feature data with availability for each tier
 const featureData = [
@@ -84,30 +84,32 @@ const featureData = [
   },
 ];
 
-// Partner logos
-const partners = ["EMPATHY.CO", "motive", "visible privacy.", "APISEARCH"];
+// Import SVG logos for partners
+const partnersLogos = [
+  "/lovable-uploads/305c860b-fdfd-438c-9165-121ec915c3e4.png"
+];
 
 const PartnerTable = () => {
   return (
     <div className="max-w-7xl mx-auto px-4 py-16 font-montserrat">
-      <h1 className="text-4xl font-semibold text-center mb-16 text-silver tracking-wide">PARTNER PROGRAMME</h1>
+      <h1 className="text-4xl font-semibold text-center mb-16 text-[#243D48] tracking-[10px]">PARTNER PROGRAMME</h1>
       
-      <div className="grid grid-cols-4 gap-0 mb-8">
+      <div className="grid grid-cols-4 gap-0">
         {/* Empty first cell for alignment */}
         <div className="col-span-1"></div>
         
-        {/* Header Cells with proper border radius */}
-        <div className="bg-bronze text-white p-4 text-center rounded-tl-xl">
+        {/* Header Cells with proper border radius and colors */}
+        <div className="bg-[#919EA3] text-white p-4 text-center rounded-tl-xl">
           <h3 className="font-semibold mb-1">BRONZE PARTNER</h3>
           <p className="text-sm">0-750 MRR</p>
         </div>
         
-        <div className="bg-silver text-white p-6 text-center rounded-t-xl -mt-4 shadow-lg z-10">
+        <div className="bg-[#243D48] text-white p-4 text-center rounded-t-xl">
           <h3 className="font-semibold mb-1">SILVER PARTNER</h3>
           <p className="text-sm">750 TO 1500 MRR</p>
         </div>
         
-        <div className="bg-gold text-white p-4 text-center rounded-tr-xl">
+        <div className="bg-[#919EA3] text-white p-4 text-center rounded-tr-xl">
           <h3 className="font-semibold mb-1">GOLD PARTNER</h3>
           <p className="text-sm">1500+ MRR</p>
         </div>
@@ -117,8 +119,8 @@ const PartnerTable = () => {
       <div className="border-collapse">
         {featureData.map((feature, index) => (
           <div key={index} className={`grid grid-cols-4 ${index % 2 === 0 ? 'bg-gray-50' : 'bg-white'}`}>
-            <div className="p-4 border-b border-gray-100 pr-12 col-span-1 text-left text-silver font-medium min-h-[70px] flex items-center" style={{ maxWidth: '280px' }}>
-              {feature.name}
+            <div className="p-4 border-b border-gray-100 pr-6 col-span-1 text-left text-[#243D48] font-medium min-h-[70px] flex items-center" style={{ maxWidth: '280px' }}>
+              <div className="line-clamp-2">{feature.name}</div>
             </div>
             <div className="p-4 border-b border-gray-100 text-center min-h-[70px] flex items-center justify-center">
               {feature.bronze ? <CheckIcon /> : <CrossIcon />}
@@ -135,27 +137,23 @@ const PartnerTable = () => {
       
       {/* Commission Row with proper border radius on Silver column */}
       <div className="grid grid-cols-4">
-        <div className="p-4 font-semibold text-silver text-left text-xl flex items-center">
+        <div className="p-4 font-semibold text-[#243D48] text-left text-xl flex items-center tracking-[5px]">
           COMMISSION
         </div>
-        <div className="p-4 text-4xl font-semibold text-center text-silver flex items-center justify-center">
+        <div className="p-4 text-4xl font-semibold text-center text-[#243D48] flex items-center justify-center">
           10%
         </div>
-        <div className="p-6 text-5xl font-semibold text-center bg-silver text-white rounded-b-xl flex items-center justify-center">
+        <div className="p-4 text-5xl font-semibold text-center bg-[#243D48] text-white rounded-b-xl flex items-center justify-center">
           15%
         </div>
-        <div className="p-4 text-4xl font-semibold text-center text-silver flex items-center justify-center">
+        <div className="p-4 text-4xl font-semibold text-center text-[#243D48] flex items-center justify-center">
           20%
         </div>
       </div>
       
       {/* Partner Logos */}
-      <div className="flex justify-center items-center gap-8 mt-20">
-        {partners.map((partner, index) => (
-          <div key={index} className="text-gray-500 font-semibold text-lg">
-            {partner}
-          </div>
-        ))}
+      <div className="flex justify-center items-center gap-16 mt-20">
+        <img src="/lovable-uploads/305c860b-fdfd-438c-9165-121ec915c3e4.png" alt="Partner Logos" className="h-8" />
       </div>
     </div>
   );

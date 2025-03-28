@@ -23,9 +23,9 @@ export default {
 				montserrat: ['Montserrat', 'sans-serif'],
 			},
 			colors: {
-				bronze: '#97A1A9',
-				silver: '#1A333D',
-				gold: '#8E979F', 
+				bronze: '#919EA3',
+				silver: '#243D48',
+				gold: '#919EA3', 
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
 				ring: 'hsl(var(--ring))',
@@ -69,6 +69,10 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				}
+			},
+			letterSpacing: {
+				'partner': '10px',
+				'commission': '5px',
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
