@@ -1,6 +1,8 @@
+
 import React from 'react';
 import { CheckIcon, CrossIcon } from './FeatureIcons';
 import { cn } from '@/lib/utils';
+import { Separator } from './ui/separator';
 
 // Feature data with availability for each tier
 const featureData = [
@@ -99,12 +101,12 @@ const PartnerTable = () => {
         <div className="col-span-1"></div>
         
         {/* Header Cells with proper border radius and colors */}
-        <div className="bg-[#919EA3] text-white p-4 text-center rounded-tl-xl">
+        <div className="bg-[#919EA3] text-white p-4 text-center rounded-tl-xl border-r border-[#E1E5E5]">
           <h3 className="font-semibold mb-1">BRONZE PARTNER</h3>
           <p className="text-sm">0-750 MRR</p>
         </div>
         
-        <div className="bg-[#243D48] text-white p-4 text-center rounded-t-xl">
+        <div className="bg-[#243D48] text-white p-4 text-center border-r border-[#E1E5E5]">
           <h3 className="font-semibold mb-1">SILVER PARTNER</h3>
           <p className="text-sm">750 TO 1500 MRR</p>
         </div>
@@ -116,16 +118,16 @@ const PartnerTable = () => {
       </div>
       
       {/* Features Grid with equal height rows */}
-      <div className="border-collapse">
+      <div className="border-collapse relative">
         {featureData.map((feature, index) => (
           <div key={index} className={`grid grid-cols-4 ${index % 2 === 0 ? 'bg-gray-50' : 'bg-white'}`}>
-            <div className="p-4 border-b border-gray-100 pr-6 col-span-1 text-left text-[#243D48] font-medium min-h-[70px] flex items-center" style={{ maxWidth: '280px' }}>
+            <div className="p-4 border-b border-gray-100 pr-6 col-span-1 text-left text-[#243D48] font-medium min-h-[70px] flex items-center border-r border-[#E1E5E5]" style={{ maxWidth: '280px' }}>
               <div className="line-clamp-2">{feature.name}</div>
             </div>
-            <div className="p-4 border-b border-gray-100 text-center min-h-[70px] flex items-center justify-center">
+            <div className="p-4 border-b border-gray-100 text-center min-h-[70px] flex items-center justify-center border-r border-[#E1E5E5]">
               {feature.bronze ? <CheckIcon /> : <CrossIcon />}
             </div>
-            <div className="p-4 border-b border-gray-100 text-center min-h-[70px] flex items-center justify-center">
+            <div className="p-4 border-b border-gray-100 text-center min-h-[70px] flex items-center justify-center border-r border-[#E1E5E5]">
               {feature.silver ? <CheckIcon /> : <CrossIcon />}
             </div>
             <div className="p-4 border-b border-gray-100 text-center min-h-[70px] flex items-center justify-center">
@@ -151,9 +153,9 @@ const PartnerTable = () => {
         </div>
       </div>
       
-      {/* Partner Logos */}
+      {/* Partner Logos - centered and aligned with title */}
       <div className="flex justify-center items-center gap-16 mt-20">
-        <img src="/lovable-uploads/305c860b-fdfd-438c-9165-121ec915c3e4.png" alt="Partner Logos" className="h-8" />
+        <img src="/lovable-uploads/305c860b-fdfd-438c-9165-121ec915c3e4.png" alt="Partner Logos" className="h-12" />
       </div>
     </div>
   );
