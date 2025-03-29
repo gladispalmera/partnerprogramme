@@ -93,7 +93,7 @@ const PartnerTable = () => {
     <div className="max-w-7xl mx-auto px-4 py-16 font-montserrat">
       <h1 className={`${isMobile ? 'text-3xl tracking-[5px]' : 'text-4xl tracking-[10px]'} font-semibold text-center mb-16 text-[#243D48]`}>PARTNER PROGRAMME</h1>
       
-      <div className={`relative ${!isMobile ? 'xl:max-w-[1000px] mx-auto' : ''}`}>
+      <div className={`relative ${!isMobile ? 'max-w-[1200px] mx-auto' : ''}`}>
         {isMobile ? (
           // Mobile Layout
           <div className="grid grid-cols-[50%_50%]">
@@ -106,15 +106,15 @@ const PartnerTable = () => {
               {featureData.map((feature, index) => (
                 <div 
                   key={index} 
-                  className={`p-4 pr-4 border-b border-gray-100 text-left text-[#243D48] font-medium h-[129px] flex items-center text-base sticky left-0 z-10 ${index % 2 === 0 ? 'bg-gray-50' : 'bg-white'}`}
+                  className={`p-4 pl-4 pr-0 border-b border-r border-gray-100 text-left text-[#243D48] font-medium h-[129px] flex items-center text-base sticky left-0 z-10 ${index % 2 === 0 ? 'bg-gray-50' : 'bg-white'}`}
                 >
-                  <div className="pl-4 pr-4">{feature.name}</div>
+                  <div>{feature.name}</div>
                 </div>
               ))}
               
               {/* Commission label */}
-              <div className="p-4 font-semibold text-[#243D48] text-left flex items-center tracking-[5px] sticky left-0 z-10 bg-white h-[60px]">
-                <span className="text-xs pl-4">COMMISSION</span>
+              <div className="p-4 font-semibold text-[#243D48] text-left flex items-center sticky left-0 z-10 bg-white h-[60px]">
+                <span className="text-[15px] tracking-[5px]">COMMISSION</span>
               </div>
             </div>
             
@@ -154,21 +154,21 @@ const PartnerTable = () => {
                 
                 {/* Commission percentages - same 60px height */}
                 <div className="p-4 font-semibold text-center text-[#243D48] flex items-center justify-center h-[60px]">
-                  <span className="text-xl">10%</span>
+                  <span className="text-[24px]">10%</span>
                 </div>
                 <div className="p-4 font-semibold text-center bg-[#243D48] text-white flex items-center justify-center h-[60px]">
-                  <span className="text-xl">15%</span>
+                  <span className="text-[24px]">15%</span>
                 </div>
                 <div className="p-4 font-semibold text-center text-[#243D48] flex items-center justify-center h-[60px]">
-                  <span className="text-xl">20%</span>
+                  <span className="text-[24px]">20%</span>
                 </div>
               </div>
             </div>
           </div>
         ) : (
-          // Desktop Layout - all columns equal width
+          // Desktop Layout - first column 489.75px, others equal width
           <div>
-            <div className="grid grid-cols-4 gap-0">
+            <div className="grid grid-cols-[489.75px_1fr_1fr_1fr] gap-0">
               {/* Empty space for the feature column */}
               <div className="bg-white"></div>
               
@@ -192,7 +192,7 @@ const PartnerTable = () => {
             {/* Features Grid with equal height rows */}
             <div className="border-collapse relative">
               {featureData.map((feature, index) => (
-                <div key={index} className={`grid grid-cols-4 ${index % 2 === 0 ? 'bg-gray-50' : 'bg-white'}`}>
+                <div key={index} className={`grid grid-cols-[489.75px_1fr_1fr_1fr] ${index % 2 === 0 ? 'bg-gray-50' : 'bg-white'}`}>
                   {/* Feature name column */}
                   <div className={`p-4 border-b border-gray-100 pr-6 text-left text-[#243D48] font-medium min-h-[70px] flex items-center ${index % 2 === 0 ? 'bg-gray-50' : 'bg-white'}`}>
                     <div>{feature.name}</div>
@@ -213,7 +213,7 @@ const PartnerTable = () => {
             </div>
             
             {/* Commission Row */}
-            <div className="grid grid-cols-4">
+            <div className="grid grid-cols-[489.75px_1fr_1fr_1fr]">
               <div className="p-4 font-semibold text-[#243D48] text-left text-xl flex items-center tracking-[5px]">
                 COMMISSION
               </div>
@@ -232,11 +232,11 @@ const PartnerTable = () => {
       </div>
       
       {/* Partner Logos - centered with the silver column for desktop */}
-      <div className={`flex justify-center mt-20 ${!isMobile ? 'max-w-[1000px] mx-auto pr-[25%] pl-[25%]' : ''}`}>
+      <div className={`flex justify-center mt-20 ${!isMobile ? 'max-w-[1200px] mx-auto grid grid-cols-[489.75px_1fr_1fr_1fr]' : ''}`}>
         <img 
           src="/lovable-uploads/305c860b-fdfd-438c-9165-121ec915c3e4.png" 
           alt="Partner Logos" 
-          className={`${isMobile ? 'h-10 w-auto object-contain' : 'h-[27px] w-auto object-contain'}`} 
+          className={`${isMobile ? 'h-8 w-auto object-contain' : 'h-[27px] w-auto object-contain col-start-2 col-span-2 justify-self-center'}`} 
         />
       </div>
     </div>
