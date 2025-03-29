@@ -3,7 +3,7 @@ import PartnerTable from "@/components/PartnerTable";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-[#F9F9F9] relative">
+    <div className="min-h-screen bg-[#F5F6F7] relative">
       {/* Background image */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <img 
