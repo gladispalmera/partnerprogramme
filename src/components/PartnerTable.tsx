@@ -3,6 +3,7 @@ import React from 'react';
 import { CheckIcon, CrossIcon } from './FeatureIcons';
 import { cn } from '@/lib/utils';
 import { Separator } from './ui/separator';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 // Feature data with availability for each tier
 const featureData = [
@@ -92,6 +93,8 @@ const partnersLogos = [
 ];
 
 const PartnerTable = () => {
+  const isMobile = useIsMobile();
+  
   return (
     <div className="max-w-7xl mx-auto px-4 py-16 font-montserrat">
       <h1 className="text-4xl font-semibold text-center mb-16 text-[#243D48] tracking-[10px]">PARTNER PROGRAMME</h1>
@@ -102,17 +105,17 @@ const PartnerTable = () => {
         
         {/* Header Cells with proper border radius and colors */}
         <div className="bg-[#919EA3] text-white p-4 text-center rounded-tl-xl border-r border-[#E1E5E5]">
-          <h3 className="font-semibold mb-1">BRONZE PARTNER</h3>
+          <h3 className="font-semibold mb-1 tracking-[5px]">BRONZE PARTNER</h3>
           <p className="text-sm">0-750 MRR</p>
         </div>
         
         <div className="bg-[#243D48] text-white p-4 text-center border-r border-[#E1E5E5]">
-          <h3 className="font-semibold mb-1">SILVER PARTNER</h3>
+          <h3 className="font-semibold mb-1 tracking-[5px]">SILVER PARTNER</h3>
           <p className="text-sm">750 TO 1500 MRR</p>
         </div>
         
         <div className="bg-[#919EA3] text-white p-4 text-center rounded-tr-xl">
-          <h3 className="font-semibold mb-1">GOLD PARTNER</h3>
+          <h3 className="font-semibold mb-1 tracking-[5px]">GOLD PARTNER</h3>
           <p className="text-sm">1500+ MRR</p>
         </div>
       </div>
@@ -121,8 +124,8 @@ const PartnerTable = () => {
       <div className="border-collapse relative">
         {featureData.map((feature, index) => (
           <div key={index} className={`grid grid-cols-4 ${index % 2 === 0 ? 'bg-gray-50' : 'bg-white'}`}>
-            <div className="p-4 border-b border-gray-100 pr-6 col-span-1 text-left text-[#243D48] font-medium min-h-[70px] flex items-center border-r border-[#E1E5E5]" style={{ maxWidth: '280px' }}>
-              <div className="line-clamp-2">{feature.name}</div>
+            <div className={`p-4 border-b border-gray-100 pr-6 col-span-1 text-left text-[#243D48] font-medium min-h-[70px] flex items-center border-r border-[#E1E5E5] ${isMobile ? 'text-xs' : ''}`} style={{ maxWidth: '280px' }}>
+              <div className={isMobile ? '' : 'line-clamp-2'}>{feature.name}</div>
             </div>
             <div className="p-4 border-b border-gray-100 text-center min-h-[70px] flex items-center justify-center border-r border-[#E1E5E5]">
               {feature.bronze ? <CheckIcon /> : <CrossIcon />}
