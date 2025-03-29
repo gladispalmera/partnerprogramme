@@ -93,7 +93,7 @@ const PartnerTable = () => {
     <div className="max-w-7xl mx-auto px-4 py-16 font-montserrat">
       <h1 className={`${isMobile ? 'text-3xl tracking-[5px]' : 'text-4xl tracking-[10px]'} font-semibold text-center mb-16 text-[#243D48]`}>PARTNER PROGRAMME</h1>
       
-      <div className="relative">
+      <div className={`relative ${!isMobile ? 'xl:max-w-[1000px] mx-auto' : ''}`}>
         {isMobile ? (
           // Mobile Layout
           <div className="grid grid-cols-[50%_50%]">
@@ -106,23 +106,23 @@ const PartnerTable = () => {
               {featureData.map((feature, index) => (
                 <div 
                   key={index} 
-                  className={`p-4 pr-2 border-b border-gray-100 text-left text-[#243D48] font-medium h-[129px] flex items-center text-base sticky left-0 z-10 ${index % 2 === 0 ? 'bg-gray-50' : 'bg-white'}`}
+                  className={`p-4 pr-4 border-b border-gray-100 text-left text-[#243D48] font-medium h-[129px] flex items-center text-base sticky left-0 z-10 ${index % 2 === 0 ? 'bg-gray-50' : 'bg-white'}`}
                 >
-                  <div>{feature.name}</div>
+                  <div className="pl-4 pr-4">{feature.name}</div>
                 </div>
               ))}
               
               {/* Commission label */}
-              <div className="p-4 font-semibold text-[#243D48] text-left flex items-center tracking-[5px] sticky left-0 z-10 bg-white">
-                <span className="text-xs">COMMISSION</span>
+              <div className="p-4 font-semibold text-[#243D48] text-left flex items-center tracking-[5px] sticky left-0 z-10 bg-white h-[60px]">
+                <span className="text-xs pl-4">COMMISSION</span>
               </div>
             </div>
             
-            {/* Scrollable content - full width with no right padding */}
-            <div className="overflow-x-auto pr-0 no-scrollbar">
+            {/* Scrollable content - no right padding */}
+            <div className="overflow-x-auto no-scrollbar pr-0">
               <div className="grid grid-cols-3 min-w-[600px]">
                 {/* Headers for tiers - same height as the empty header */}
-                <div className="bg-[#919EA3] text-white p-4 text-center h-[124px] flex flex-col justify-center">
+                <div className="bg-[#919EA3] text-white p-4 text-center h-[124px] flex flex-col justify-center rounded-tl-[12px]">
                   <h3 className="font-semibold mb-1 tracking-[5px] text-base">BRONZE PARTNER</h3>
                   <p className="text-sm tracking-[5px]">0-750 MRR</p>
                 </div>
@@ -132,7 +132,7 @@ const PartnerTable = () => {
                   <p className="text-sm tracking-[5px]">750 TO 1500 MRR</p>
                 </div>
                 
-                <div className="bg-[#919EA3] text-white p-4 text-center h-[124px] flex flex-col justify-center">
+                <div className="bg-[#919EA3] text-white p-4 text-center h-[124px] flex flex-col justify-center rounded-tr-[12px]">
                   <h3 className="font-semibold mb-1 tracking-[5px] text-base">GOLD PARTNER</h3>
                   <p className="text-sm tracking-[5px]">1500+ MRR</p>
                 </div>
@@ -152,28 +152,28 @@ const PartnerTable = () => {
                   </React.Fragment>
                 ))}
                 
-                {/* Commission percentages */}
-                <div className="p-4 font-semibold text-center text-[#243D48] flex items-center justify-center">
+                {/* Commission percentages - same 60px height */}
+                <div className="p-4 font-semibold text-center text-[#243D48] flex items-center justify-center h-[60px]">
                   <span className="text-xl">10%</span>
                 </div>
-                <div className="p-4 font-semibold text-center bg-[#243D48] text-white flex items-center justify-center">
+                <div className="p-4 font-semibold text-center bg-[#243D48] text-white flex items-center justify-center h-[60px]">
                   <span className="text-xl">15%</span>
                 </div>
-                <div className="p-4 font-semibold text-center text-[#243D48] flex items-center justify-center">
+                <div className="p-4 font-semibold text-center text-[#243D48] flex items-center justify-center h-[60px]">
                   <span className="text-xl">20%</span>
                 </div>
               </div>
             </div>
           </div>
         ) : (
-          // Desktop Layout
+          // Desktop Layout - all columns equal width
           <div>
             <div className="grid grid-cols-4 gap-0">
               {/* Empty space for the feature column */}
               <div className="bg-white"></div>
               
               {/* Header Cells for desktop */}
-              <div className="bg-[#919EA3] text-white p-4 text-center">
+              <div className="bg-[#919EA3] text-white p-4 text-center rounded-tl-[12px]">
                 <h3 className="font-semibold mb-1 tracking-[5px]">BRONZE PARTNER</h3>
                 <p className="text-sm tracking-[5px]">0-750 MRR</p>
               </div>
@@ -183,7 +183,7 @@ const PartnerTable = () => {
                 <p className="text-sm tracking-[5px]">750 TO 1500 MRR</p>
               </div>
               
-              <div className="bg-[#919EA3] text-white p-4 text-center">
+              <div className="bg-[#919EA3] text-white p-4 text-center rounded-tr-[12px]">
                 <h3 className="font-semibold mb-1 tracking-[5px]">GOLD PARTNER</h3>
                 <p className="text-sm tracking-[5px]">1500+ MRR</p>
               </div>
@@ -231,12 +231,12 @@ const PartnerTable = () => {
         )}
       </div>
       
-      {/* Partner Logos - centered and aligned with title, 10% smaller */}
-      <div className="flex justify-center items-center mt-20">
+      {/* Partner Logos - centered with the silver column for desktop */}
+      <div className={`flex justify-center mt-20 ${!isMobile ? 'max-w-[1000px] mx-auto pr-[25%] pl-[25%]' : ''}`}>
         <img 
           src="/lovable-uploads/305c860b-fdfd-438c-9165-121ec915c3e4.png" 
           alt="Partner Logos" 
-          className={`${isMobile ? 'h-11 w-auto object-contain' : 'h-9 w-auto object-contain'}`} 
+          className={`${isMobile ? 'h-10 w-auto object-contain' : 'h-[27px] w-auto object-contain'}`} 
         />
       </div>
     </div>
