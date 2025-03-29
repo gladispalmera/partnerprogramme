@@ -106,7 +106,7 @@ const PartnerTable = () => {
               {featureData.map((feature, index) => (
                 <div 
                   key={index} 
-                  className={`p-4 pl-4 pr-0 border-b border-r border-gray-100 text-left text-[#243D48] font-medium h-[129px] flex items-center text-base sticky left-0 z-10 ${index % 2 === 0 ? 'bg-gray-50' : 'bg-white'}`}
+                  className={`p-4 pl-4 border-b border-r border-gray-100 text-left text-[#243D48] font-medium h-[129px] flex items-center text-base sticky left-0 z-10 ${index % 2 === 0 ? 'bg-gray-50' : 'bg-white'}`}
                 >
                   <div>{feature.name}</div>
                 </div>
@@ -118,8 +118,8 @@ const PartnerTable = () => {
               </div>
             </div>
             
-            {/* Scrollable content - no right padding */}
-            <div className="overflow-x-auto no-scrollbar pr-0">
+            {/* Scrollable content */}
+            <div className="overflow-x-auto no-scrollbar">
               <div className="grid grid-cols-3 min-w-[600px]">
                 {/* Headers for tiers - same height as the empty header */}
                 <div className="bg-[#919EA3] text-white p-4 text-center h-[124px] flex flex-col justify-center rounded-tl-[12px]">
@@ -236,7 +236,7 @@ const PartnerTable = () => {
         <img 
           src="/lovable-uploads/305c860b-fdfd-438c-9165-121ec915c3e4.png" 
           alt="Partner Logos" 
-          className={`${isMobile ? 'h-8 w-auto object-contain' : 'h-[27px] w-auto object-contain col-start-2 col-span-2 justify-self-center'}`} 
+          className={`${isMobile ? 'h-6 w-auto object-contain' : 'h-[27px] w-auto object-contain col-start-2 col-span-2 justify-self-center'}`} 
         />
       </div>
     </div>
