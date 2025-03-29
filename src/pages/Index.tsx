@@ -9,7 +9,7 @@ const Index = () => {
         <img 
           src="/lovable-uploads/e90ed570-4225-4378-a0e7-9b7fe65e58f0.png" 
           alt="Background Pattern" 
-          className="w-full object-cover object-top max-w-[1400px] mx-auto"
+          className="w-full object-cover object-top max-w-full mx-auto"
         />
       </div>
       <div className="relative z-10">

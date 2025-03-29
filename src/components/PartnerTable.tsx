@@ -105,7 +105,7 @@ const PartnerTable = () => {
             {/* Feature name column - fixed width */}
             <div className="sticky left-0 z-10 bg-white">
               {/* Empty header for the feature column - make it the same height as tier headers */}
-              <div className="h-[124px]"></div>
+              <div className="h-[124px] bg-transparent"></div>
               
               {/* Feature names */}
               {featureData.map((feature, index) => (
@@ -174,8 +174,8 @@ const PartnerTable = () => {
           // Desktop Layout - first column 489.75px, others equal width
           <div>
             <div className="grid grid-cols-[489.75px_1fr_1fr_1fr] gap-0 max-w-[1200px] mx-auto">
-              {/* Empty space for the feature column */}
-              <div className="bg-white"></div>
+              {/* Empty space for the feature column - now transparent */}
+              <div className="bg-transparent"></div>
               
               {/* Header Cells for desktop */}
               <div className="bg-[#919EA3] text-white p-4 text-center rounded-tl-[12px]">
@@ -241,7 +241,7 @@ const PartnerTable = () => {
         <img 
           src="/lovable-uploads/305c860b-fdfd-438c-9165-121ec915c3e4.png" 
           alt="Partner Logos" 
-          className={`${isMobile ? 'h-6 w-auto scale-80 object-contain' : 'h-[27px] w-auto object-contain'}`} 
+          className={`${isMobile ? 'h-6 w-auto scale-80 object-contain' : 'h-[35px] w-auto object-contain'}`} 
         />
       </div>
     </div>
