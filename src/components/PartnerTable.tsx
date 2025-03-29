@@ -107,7 +107,7 @@ const PartnerTable = () => {
               {featureData.map((feature, index) => (
                 <div 
                   key={index} 
-                  className={`p-4 pl-4 border-b border-gray-100 text-left text-[#243D48] font-medium h-[129px] flex items-center text-base sticky left-0 z-10 bg-transparent ${index === 0 ? 'rounded-tl-[12px]' : ''} ${index === featureData.length - 1 ? 'rounded-bl-[12px]' : ''}`}
+                  className={`p-4 pl-4 border-b border-gray-100 text-left text-[#243D48] font-medium h-[129px] flex items-center text-base sticky left-0 z-10 ${index % 2 === 0 ? 'bg-gray-50' : 'bg-white'} ${index === 0 ? 'rounded-tl-[12px]' : ''} ${index === featureData.length - 1 ? 'rounded-bl-[12px]' : ''}`}
                 >
                   <div>{feature.name}</div>
                 </div>
