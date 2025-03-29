@@ -99,14 +99,14 @@ const PartnerTable = () => {
           <div className="grid grid-cols-[50%_50%]">
             {/* Feature name column - fixed width */}
             <div className="sticky left-0 z-10 bg-white">
-              {/* Empty header for the feature column */}
-              <div className="h-[76px]"></div>
+              {/* Empty header for the feature column - make it the same height as tier headers */}
+              <div className="h-[124px]"></div>
               
               {/* Feature names */}
               {featureData.map((feature, index) => (
                 <div 
                   key={index} 
-                  className={`p-4 pr-2 border-b border-gray-100 text-left text-[#243D48] font-medium h-[70px] flex items-center text-base sticky left-0 z-10 ${index % 2 === 0 ? 'bg-gray-50' : 'bg-white'}`}
+                  className={`p-4 pr-2 border-b border-gray-100 text-left text-[#243D48] font-medium h-[129px] flex items-center text-base sticky left-0 z-10 ${index % 2 === 0 ? 'bg-gray-50' : 'bg-white'}`}
                 >
                   <div>{feature.name}</div>
                 </div>
@@ -118,35 +118,35 @@ const PartnerTable = () => {
               </div>
             </div>
             
-            {/* Scrollable content */}
+            {/* Scrollable content - full width with no right padding */}
             <div className="overflow-x-auto pr-0 no-scrollbar">
               <div className="grid grid-cols-3 min-w-[600px]">
-                {/* Headers for tiers */}
-                <div className="bg-[#919EA3] text-white p-4 text-center rounded-tl-xl">
+                {/* Headers for tiers - same height as the empty header */}
+                <div className="bg-[#919EA3] text-white p-4 text-center h-[124px] flex flex-col justify-center">
                   <h3 className="font-semibold mb-1 tracking-[5px] text-base">BRONZE PARTNER</h3>
                   <p className="text-sm tracking-[5px]">0-750 MRR</p>
                 </div>
                 
-                <div className="bg-[#243D48] text-white p-4 text-center">
+                <div className="bg-[#243D48] text-white p-4 text-center h-[124px] flex flex-col justify-center">
                   <h3 className="font-semibold mb-1 tracking-[5px] text-base">SILVER PARTNER</h3>
                   <p className="text-sm tracking-[5px]">750 TO 1500 MRR</p>
                 </div>
                 
-                <div className="bg-[#919EA3] text-white p-4 text-center rounded-tr-xl">
+                <div className="bg-[#919EA3] text-white p-4 text-center h-[124px] flex flex-col justify-center">
                   <h3 className="font-semibold mb-1 tracking-[5px] text-base">GOLD PARTNER</h3>
                   <p className="text-sm tracking-[5px]">1500+ MRR</p>
                 </div>
                 
-                {/* Feature availability for each tier */}
+                {/* Feature availability for each tier - consistent heights */}
                 {featureData.map((feature, index) => (
                   <React.Fragment key={index}>
-                    <div className={`p-4 border-b border-gray-100 text-center h-[70px] flex items-center justify-center text-base ${index % 2 === 0 ? 'bg-gray-50' : 'bg-white'}`}>
+                    <div className={`p-4 border-b border-gray-100 text-center h-[129px] flex items-center justify-center text-base ${index % 2 === 0 ? 'bg-gray-50' : 'bg-white'}`}>
                       {feature.bronze ? <CheckIcon /> : <CrossIcon />}
                     </div>
-                    <div className={`p-4 border-b border-gray-100 text-center h-[70px] flex items-center justify-center text-base ${index % 2 === 0 ? 'bg-gray-50' : 'bg-white'}`}>
+                    <div className={`p-4 border-b border-gray-100 text-center h-[129px] flex items-center justify-center text-base ${index % 2 === 0 ? 'bg-gray-50' : 'bg-white'}`}>
                       {feature.silver ? <CheckIcon /> : <CrossIcon />}
                     </div>
-                    <div className={`p-4 border-b border-gray-100 text-center h-[70px] flex items-center justify-center text-base ${index % 2 === 0 ? 'bg-gray-50' : 'bg-white'}`}>
+                    <div className={`p-4 border-b border-gray-100 text-center h-[129px] flex items-center justify-center text-base ${index % 2 === 0 ? 'bg-gray-50' : 'bg-white'}`}>
                       {feature.gold ? <CheckIcon /> : <CrossIcon />}
                     </div>
                   </React.Fragment>
@@ -156,7 +156,7 @@ const PartnerTable = () => {
                 <div className="p-4 font-semibold text-center text-[#243D48] flex items-center justify-center">
                   <span className="text-xl">10%</span>
                 </div>
-                <div className="p-4 font-semibold text-center bg-[#243D48] text-white flex items-center justify-center rounded-bl-xl rounded-br-xl">
+                <div className="p-4 font-semibold text-center bg-[#243D48] text-white flex items-center justify-center">
                   <span className="text-xl">15%</span>
                 </div>
                 <div className="p-4 font-semibold text-center text-[#243D48] flex items-center justify-center">
@@ -173,7 +173,7 @@ const PartnerTable = () => {
               <div className="bg-white"></div>
               
               {/* Header Cells for desktop */}
-              <div className="bg-[#919EA3] text-white p-4 text-center rounded-tl-xl">
+              <div className="bg-[#919EA3] text-white p-4 text-center">
                 <h3 className="font-semibold mb-1 tracking-[5px]">BRONZE PARTNER</h3>
                 <p className="text-sm tracking-[5px]">0-750 MRR</p>
               </div>
@@ -183,7 +183,7 @@ const PartnerTable = () => {
                 <p className="text-sm tracking-[5px]">750 TO 1500 MRR</p>
               </div>
               
-              <div className="bg-[#919EA3] text-white p-4 text-center rounded-tr-xl">
+              <div className="bg-[#919EA3] text-white p-4 text-center">
                 <h3 className="font-semibold mb-1 tracking-[5px]">GOLD PARTNER</h3>
                 <p className="text-sm tracking-[5px]">1500+ MRR</p>
               </div>
@@ -220,7 +220,7 @@ const PartnerTable = () => {
               <div className="p-4 text-4xl font-semibold text-center text-[#243D48] flex items-center justify-center">
                 10%
               </div>
-              <div className="p-4 text-5xl font-semibold text-center bg-[#243D48] text-white flex items-center justify-center rounded-b-xl">
+              <div className="p-4 text-5xl font-semibold text-center bg-[#243D48] text-white flex items-center justify-center rounded-b-[12px]">
                 15%
               </div>
               <div className="p-4 text-4xl font-semibold text-center text-[#243D48] flex items-center justify-center">
@@ -231,12 +231,12 @@ const PartnerTable = () => {
         )}
       </div>
       
-      {/* Partner Logos - centered and aligned with title */}
+      {/* Partner Logos - centered and aligned with title, 10% smaller */}
       <div className="flex justify-center items-center mt-20">
         <img 
           src="/lovable-uploads/305c860b-fdfd-438c-9165-121ec915c3e4.png" 
           alt="Partner Logos" 
-          className={`${isMobile ? 'h-12 w-auto object-contain' : 'h-10 w-auto object-contain'}`} 
+          className={`${isMobile ? 'h-11 w-auto object-contain' : 'h-9 w-auto object-contain'}`} 
         />
       </div>
     </div>
