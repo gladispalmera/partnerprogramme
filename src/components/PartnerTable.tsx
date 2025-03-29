@@ -1,5 +1,5 @@
 
-import React, { useRef } from 'react';
+import React from 'react';
 import { CheckIcon, CrossIcon } from './FeatureIcons';
 import { cn } from '@/lib/utils';
 import { useIsMobile } from '@/hooks/use-mobile';
@@ -91,7 +91,7 @@ const PartnerTable = () => {
   
   return (
     <div className="max-w-7xl mx-auto px-4 py-16 font-montserrat">
-      <h1 className={`${isMobile ? 'text-2xl tracking-[5px]' : 'text-4xl tracking-[10px]'} font-semibold text-center mb-16 text-[#243D48]`}>PARTNER PROGRAMME</h1>
+      <h1 className={`${isMobile ? 'text-3xl tracking-[5px]' : 'text-4xl tracking-[10px]'} font-semibold text-center mb-16 text-[#243D48]`}>PARTNER PROGRAMME</h1>
       
       <div className="relative">
         {isMobile ? (
@@ -106,20 +106,20 @@ const PartnerTable = () => {
               {featureData.map((feature, index) => (
                 <div 
                   key={index} 
-                  className={`p-4 pr-2 border-b border-gray-100 text-left text-[#243D48] font-medium min-h-[70px] flex items-center text-base sticky left-0 z-10 ${index % 2 === 0 ? 'bg-gray-50' : 'bg-white'}`}
+                  className={`p-4 pr-2 border-b border-gray-100 text-left text-[#243D48] font-medium h-[70px] flex items-center text-base sticky left-0 z-10 ${index % 2 === 0 ? 'bg-gray-50' : 'bg-white'}`}
                 >
                   <div>{feature.name}</div>
                 </div>
               ))}
               
               {/* Commission label */}
-              <div className="p-4 font-semibold text-[#243D48] text-left text-xl flex items-center tracking-[5px] sticky left-0 z-10 bg-white">
+              <div className="p-4 font-semibold text-[#243D48] text-left flex items-center tracking-[5px] sticky left-0 z-10 bg-white">
                 <span className="text-xs">COMMISSION</span>
               </div>
             </div>
             
             {/* Scrollable content */}
-            <div className="overflow-x-auto pr-0">
+            <div className="overflow-x-auto pr-0 no-scrollbar">
               <div className="grid grid-cols-3 min-w-[600px]">
                 {/* Headers for tiers */}
                 <div className="bg-[#919EA3] text-white p-4 text-center rounded-tl-xl">
@@ -140,26 +140,26 @@ const PartnerTable = () => {
                 {/* Feature availability for each tier */}
                 {featureData.map((feature, index) => (
                   <React.Fragment key={index}>
-                    <div className={`p-4 border-b border-gray-100 text-center min-h-[70px] flex items-center justify-center text-base ${index % 2 === 0 ? 'bg-gray-50' : 'bg-white'}`}>
+                    <div className={`p-4 border-b border-gray-100 text-center h-[70px] flex items-center justify-center text-base ${index % 2 === 0 ? 'bg-gray-50' : 'bg-white'}`}>
                       {feature.bronze ? <CheckIcon /> : <CrossIcon />}
                     </div>
-                    <div className={`p-4 border-b border-gray-100 text-center min-h-[70px] flex items-center justify-center text-base ${index % 2 === 0 ? 'bg-gray-50' : 'bg-white'}`}>
+                    <div className={`p-4 border-b border-gray-100 text-center h-[70px] flex items-center justify-center text-base ${index % 2 === 0 ? 'bg-gray-50' : 'bg-white'}`}>
                       {feature.silver ? <CheckIcon /> : <CrossIcon />}
                     </div>
-                    <div className={`p-4 border-b border-gray-100 text-center min-h-[70px] flex items-center justify-center text-base ${index % 2 === 0 ? 'bg-gray-50' : 'bg-white'}`}>
+                    <div className={`p-4 border-b border-gray-100 text-center h-[70px] flex items-center justify-center text-base ${index % 2 === 0 ? 'bg-gray-50' : 'bg-white'}`}>
                       {feature.gold ? <CheckIcon /> : <CrossIcon />}
                     </div>
                   </React.Fragment>
                 ))}
                 
                 {/* Commission percentages */}
-                <div className="p-4 text-4xl font-semibold text-center text-[#243D48] flex items-center justify-center">
+                <div className="p-4 font-semibold text-center text-[#243D48] flex items-center justify-center">
                   <span className="text-xl">10%</span>
                 </div>
-                <div className="p-4 text-5xl font-semibold text-center bg-[#243D48] text-white flex items-center justify-center">
+                <div className="p-4 font-semibold text-center bg-[#243D48] text-white flex items-center justify-center rounded-bl-xl rounded-br-xl">
                   <span className="text-xl">15%</span>
                 </div>
-                <div className="p-4 text-4xl font-semibold text-center text-[#243D48] flex items-center justify-center">
+                <div className="p-4 font-semibold text-center text-[#243D48] flex items-center justify-center">
                   <span className="text-xl">20%</span>
                 </div>
               </div>
@@ -220,7 +220,7 @@ const PartnerTable = () => {
               <div className="p-4 text-4xl font-semibold text-center text-[#243D48] flex items-center justify-center">
                 10%
               </div>
-              <div className="p-4 text-5xl font-semibold text-center bg-[#243D48] text-white flex items-center justify-center">
+              <div className="p-4 text-5xl font-semibold text-center bg-[#243D48] text-white flex items-center justify-center rounded-b-xl">
                 15%
               </div>
               <div className="p-4 text-4xl font-semibold text-center text-[#243D48] flex items-center justify-center">
@@ -236,11 +236,24 @@ const PartnerTable = () => {
         <img 
           src="/lovable-uploads/305c860b-fdfd-438c-9165-121ec915c3e4.png" 
           alt="Partner Logos" 
-          className={`${isMobile ? 'h-12 w-auto object-contain' : 'h-20 w-auto object-contain'}`} 
+          className={`${isMobile ? 'h-12 w-auto object-contain' : 'h-10 w-auto object-contain'}`} 
         />
       </div>
     </div>
   );
 };
+
+// Add a custom utility class to hide scrollbar while allowing scrolling
+const style = document.createElement('style');
+style.textContent = `
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+`;
+document.head.appendChild(style);
 
 export default PartnerTable;
