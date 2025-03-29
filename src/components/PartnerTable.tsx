@@ -91,7 +91,12 @@ const PartnerTable = () => {
   
   return (
     <div className="max-w-7xl mx-auto px-4 py-16 font-montserrat">
-      <h1 className={`${isMobile ? 'text-3xl tracking-[5px]' : 'text-4xl tracking-[10px]'} font-semibold text-center mb-16 text-[#243D48]`}>PARTNER PROGRAMME</h1>
+      <div className="max-w-[1200px] mx-auto text-center mb-16">
+        <h1 className={`${isMobile ? 'text-3xl tracking-[5px]' : 'text-4xl tracking-[10px]'} font-semibold text-center text-[#243D48]`}>PARTNER PROGRAMME</h1>
+        <p className={`${isMobile ? 'text-base' : 'text-2xl'} text-center mt-4 text-[#243D48] max-w-3xl mx-auto`}>
+          Combining AI Search with privacy and ethics, supporting retailers across the globe.
+        </p>
+      </div>
       
       <div className={`relative ${!isMobile ? 'max-w-[1200px] mx-auto' : ''}`}>
         {isMobile ? (
@@ -168,7 +173,7 @@ const PartnerTable = () => {
         ) : (
           // Desktop Layout - first column 489.75px, others equal width
           <div>
-            <div className="grid grid-cols-[489.75px_1fr_1fr_1fr] gap-0">
+            <div className="grid grid-cols-[489.75px_1fr_1fr_1fr] gap-0 max-w-[1200px] mx-auto">
               {/* Empty space for the feature column */}
               <div className="bg-white"></div>
               
@@ -190,7 +195,7 @@ const PartnerTable = () => {
             </div>
             
             {/* Features Grid with equal height rows */}
-            <div className="border-collapse relative">
+            <div className="border-collapse relative max-w-[1200px] mx-auto">
               {featureData.map((feature, index) => (
                 <div key={index} className={`grid grid-cols-[489.75px_1fr_1fr_1fr] ${index % 2 === 0 ? 'bg-gray-50' : 'bg-white'}`}>
                   {/* Feature name column */}
@@ -213,7 +218,7 @@ const PartnerTable = () => {
             </div>
             
             {/* Commission Row */}
-            <div className="grid grid-cols-[489.75px_1fr_1fr_1fr]">
+            <div className="grid grid-cols-[489.75px_1fr_1fr_1fr] max-w-[1200px] mx-auto">
               <div className="p-4 font-semibold text-[#243D48] text-left text-xl flex items-center tracking-[5px]">
                 COMMISSION
               </div>
@@ -231,12 +236,12 @@ const PartnerTable = () => {
         )}
       </div>
       
-      {/* Partner Logos - centered with the silver column for desktop */}
-      <div className={`flex justify-center mt-20 ${!isMobile ? 'max-w-[1200px] mx-auto grid grid-cols-[489.75px_1fr_1fr_1fr]' : ''}`}>
+      {/* Partner Logos - centered on screen */}
+      <div className="flex justify-center mt-20">
         <img 
           src="/lovable-uploads/305c860b-fdfd-438c-9165-121ec915c3e4.png" 
           alt="Partner Logos" 
-          className={`${isMobile ? 'h-6 w-auto object-contain' : 'h-[27px] w-auto object-contain col-start-2 col-span-2 justify-self-center'}`} 
+          className={`${isMobile ? 'h-6 w-auto scale-80 object-contain' : 'h-[27px] w-auto object-contain'}`} 
         />
       </div>
     </div>
